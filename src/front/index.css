@@ -1,0 +1,111 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f9fb;
+  margin: 0;
+  color: #222;
+}
+
+.auth-container, .private-container {
+  max-width: 350px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 2rem 2rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.auth-form input {
+  padding: 0.7rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f7f9fb;
+  transition: border 0.2s;
+}
+
+.auth-form input:focus {
+  border: 1.5px solid #4a90e2;
+  outline: none;
+}
+
+.auth-form button {
+  padding: 0.7rem;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.auth-form button:hover {
+  background: #357ab8;
+}
+
+.auth-message {
+  margin-top: 1rem;
+  color: #e74c3c;
+  font-size: 0.98rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #357ab8;
+}
+
+.logout-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+.private-container h2 {
+  color: #4a90e2;
+}
