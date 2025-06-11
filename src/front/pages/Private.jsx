@@ -11,7 +11,7 @@ const Private = () => {
             navigate("/login");
             return;
         }
-        fetch("http://localhost:5000/private", {
+        fetch("https://silver-palm-tree-wrg6vw6j45wgcx79-3001.app.github.dev/api/private", {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => {

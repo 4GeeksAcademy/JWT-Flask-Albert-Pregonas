@@ -22,8 +22,8 @@ def handle_hello():
 # La función create_access_token() se utiliza para generar el JWT
 
 
-@api.route("/token", methods=["POST"])
-def create_token():
+@api.route("/login", methods=["POST"])
+def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
 
@@ -32,10 +32,10 @@ def create_token():
 
     if user is None:
         # el usuario no se encontró en la base de datos
-        return jsonify({"msg": "Bad emails or password"}), 401
+        return jsonify({"msg": "Bad email or password"}), 401
 
-    # Crea un nuevo token con el id de usuario dentro
-    access_token = create_access_token(identity=user.id)
+    # Crea un nuevo token con el id de usuario y el email dentro
+    access_token = create_access_token(identity=user.id, additional_claims={"email": user.email})
     return jsonify({"token": access_token, "user_id": user.id})
 
 
@@ -49,6 +49,7 @@ def signup():
     user.password = password
     user.is_active = True
     db.session.add(user)
+    db.session.commit()
 
     # Crea un nuevo token con el id de usuario dentro
     access_token = create_access_token(identity=user.id)

@@ -16,9 +16,8 @@ const Signup = () => {
             });
             const data = await res.json();
             if (res.ok) {
-                setMessage("Usuario registrado correctamente. Ahora puedes iniciar sesión.");
-                setEmail("");
-                setPassword("");
+                sessionStorage.setItem("token", data.token);
+                window.location.href = "/private";
             } else {
                 setMessage(data.msg || "Error en el registro");
             }

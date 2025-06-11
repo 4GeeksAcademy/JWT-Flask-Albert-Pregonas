@@ -11,7 +11,7 @@ const Login = () => {
         e.preventDefault();
         setMessage("");
         try {
-            const res = await fetch("https://silver-palm-tree-wrg6vw6j45wgcx79-3001.app.github.dev/token", {
+            const res = await fetch("https://silver-palm-tree-wrg6vw6j45wgcx79-3001.app.github.dev/api/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
